@@ -68,7 +68,7 @@
             </div>
         @endif
 
-        <form action="{{ route('products.update', $product->id) }}" method="POST">
+        <form action="{{ route('auth.products.update', $product->id) }}" method="POST">
             @csrf
             @method('PUT')
 
@@ -88,7 +88,7 @@
             </div>
 
             <div class="d-flex justify-content-between mt-4">
-                <a href="{{ route('products.index') }}" class="btn btn-secondary px-4">← Quay lại</a>
+                <a href="{{ route('auth.products.index') }}" class="btn btn-secondary px-4">← Quay lại</a>
                 <button type="submit" class="btn btn-primary px-4">💾 Cập nhật</button>
             </div>
         </form>

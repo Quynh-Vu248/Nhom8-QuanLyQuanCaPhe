@@ -68,7 +68,7 @@
             </div>
         @endif
 
-        <form action="{{ route('products.store') }}" method="POST">
+        <form action="{{ route('auth.products.store') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label class="form-label">Tên sản phẩm</label>
@@ -86,7 +86,7 @@
             </div>
 
             <div class="d-flex justify-content-between mt-4">
-                <a href="{{ route('products.index') }}" class="btn btn-secondary px-4">← Quay lại</a>
+                <a href="{{ route('auth.products.index') }}" class="btn btn-secondary px-4">← Quay lại</a>
                 <button type="submit" class="btn btn-primary px-4">💾 Lưu sản phẩm</button>
             </div>
         </form>

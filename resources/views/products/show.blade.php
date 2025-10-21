@@ -72,7 +72,7 @@
                 💰 {{ number_format($product->price, 0, ',', '.') }} VND
             </p>
 
-            <a href="{{ route('products.index') }}" class="btn btn-outline-secondary btn-back">
+            <a href="{{ route('auth.products.index') }}" class="btn btn-outline-secondary btn-back">
                 ← Quay lại danh sách
             </a>
         </div>

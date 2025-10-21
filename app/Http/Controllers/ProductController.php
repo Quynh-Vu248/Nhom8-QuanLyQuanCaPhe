@@ -3,30 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product; // dùng model Product để lấy dữ liệu từ DB
+use App\Models\Product;
 
 class ProductController extends Controller
 {
-    /**
-     * Hiển thị danh sách sản phẩm.
-     */
+    // Hiển thị danh sách sản phẩm
     public function index()
     {
-        $products = Product::all(); // lấy tất cả sản phẩm từ DB
-        return view('products.index', compact('products')); // truyền vào view
+        $products = Product::all();
+        return view('products.index', compact('products'));
     }
 
-    /**
-     * Hiển thị form thêm sản phẩm mới.
-     */
+    // Hiển thị form thêm sản phẩm
     public function create()
     {
         return view('products.create');
     }
 
-    /**
-     * Lưu sản phẩm mới vào database.
-     */
+    // Lưu sản phẩm mới vào database
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -36,31 +30,26 @@ class ProductController extends Controller
         ]);
 
         Product::create($validated);
+
         return redirect()->route('products.index')->with('success', 'Thêm sản phẩm thành công!');
     }
 
-    /**
-     * Hiển thị chi tiết 1 sản phẩm.
-     */
-    public function show(string $id)
+    // Hiển thị chi tiết sản phẩm
+    public function show(int $id)
     {
         $product = Product::findOrFail($id);
         return view('products.show', compact('product'));
     }
 
-    /**
-     * Hiển thị form sửa sản phẩm.
-     */
-    public function edit(string $id)
+    // Hiển thị form sửa sản phẩm
+    public function edit(int $id)
     {
         $product = Product::findOrFail($id);
         return view('products.edit', compact('product'));
     }
 
-    /**
-     * Cập nhật sản phẩm trong database.
-     */
-    public function update(Request $request, string $id)
+    // Cập nhật sản phẩm
+    public function update(Request $request, int $id)
     {
         $product = Product::findOrFail($id);
 
@@ -71,16 +60,16 @@ class ProductController extends Controller
         ]);
 
         $product->update($validated);
+
         return redirect()->route('products.index')->with('success', 'Cập nhật thành công!');
     }
 
-    /**
-     * Xóa sản phẩm.
-     */
-    public function destroy(string $id)
+    // Xóa sản phẩm
+    public function destroy(int $id)
     {
         $product = Product::findOrFail($id);
         $product->delete();
+
         return redirect()->route('products.index')->with('success', 'Đã xóa sản phẩm!');
     }
 }

@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::latest()->get();
-        return view('auth.products.index', compact('products'));
+        return view('products.index', compact('products'));
     }
 
     /**
@@ -45,7 +45,8 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('auth.products', compact('product'));
     }
 
     /**

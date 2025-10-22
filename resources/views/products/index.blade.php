@@ -43,10 +43,10 @@
                                     {{ $product->created_at->format('d/m/Y') }}
                                 </td>
                                 <td class="px-4 py-2 space-x-3">
-                                    <a href="{{ route('auth.products.show', $product->id) }}" 
+                                    <a href="{{ route('admin.products.show', $product->id) }}" 
                                        class="text-blue-600 hover:underline">Xem</a>
 
-                                    <a href="{{ route('auth.products.edit', $product->id) }}" 
+                                    <a href="{{ route('admin.products.edit', $product->id) }}" 
                                        class="text-yellow-600 hover:underline">Sửa</a>
 
                                     <form action="{{ route('auth.products.destroy', $product->id) }}" 
@@ -59,12 +59,6 @@
                                             Xóa
                                         </button>
                                     </form>
-
-                                    <!-- ✅ Nút Đặt hàng -->
-                                    <a href="{{ route('orders.create', $product->id) }}" 
-                                       class="text-green-600 font-semibold hover:underline">
-                                        Đặt hàng
-                                    </a>
                                 </td>
                             </tr>
                         @empty

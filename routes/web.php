@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
-use App\Http\Controllers\AuthProductController as UserProductController; // ✅ Đã sửa lại namespace đúng vị trí file
+use App\Http\Controllers\AuthProductController as UserProductController;
 use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\OrderController;
@@ -52,9 +52,10 @@ Route::middleware(['auth'])->prefix('auth')->group(function () {
     Route::delete('products/{product}', [UserProductController::class, 'destroy'])->name('auth.products.destroy');
 });
 
-// Auth routes mặc định (đăng nhập, đăng ký, quên mật khẩu, v.v.)
-require __DIR__.'/auth.php';
+// Auth routes mặc định
+require __DIR__ . '/auth.php';
 
+// Đặt hàng (Order)
 Route::middleware(['auth'])->group(function () {
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::post('/orders/{product}', [OrderController::class, 'store'])->name('orders.store');

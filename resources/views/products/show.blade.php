@@ -14,7 +14,7 @@
             max-width: 700px;
             margin: 60px auto;
             background: #fff;
-            border-radius: 16px;
+            border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             overflow: hidden;
         }

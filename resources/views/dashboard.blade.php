@@ -30,7 +30,7 @@
                             </li>
                         @empty
                             <li class="col-span-3 text-center text-gray-600">
-                                Chưa có sản phẩm trong menu hôm nay.
+                                Chưa có sản phẩm nào trong menu hôm nay.
                             </li>
                         @endforelse
                     </ul>

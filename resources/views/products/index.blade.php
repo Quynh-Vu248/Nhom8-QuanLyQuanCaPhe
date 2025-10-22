@@ -28,7 +28,7 @@
                             <th class="px-4 py-2">Mô tả</th>
                             <th class="px-4 py-2">Giá</th>
                             <th class="px-4 py-2">Ngày tạo</th>
-                            <th class="px-4 py-2">Hành động</th>
+                            <th class="px-4 py-2">Tùy chỉnh</th>
                         </tr>
                     </thead>
                     <tbody>

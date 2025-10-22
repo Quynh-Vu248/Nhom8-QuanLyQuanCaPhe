@@ -7,7 +7,7 @@
 
             <a href="/order" 
                class="bg-amber-600 text-white px-5 py-2 rounded-lg hover:bg-amber-700 transition shadow-md">
-                Đặt hàng ngay
+                Đặt hàng
             </a>
         </div>
     </x-slot>
@@ -30,7 +30,7 @@
                             </li>
                         @empty
                             <li class="col-span-3 text-center text-gray-600">
-                                Chưa có sản phẩm nào trong menu hôm nay.
+                                Chưa có sản phẩm trong menu hôm nay.
                             </li>
                         @endforelse
                     </ul>
